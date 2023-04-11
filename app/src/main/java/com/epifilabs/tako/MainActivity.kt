@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun createElementsStudyList(learningLanguage:String,mainLanguage:String,pronunciation:String,nameLL:String,nameML:String){
+    private fun createElementsStudyList(learningLanguage:String,pronunciation:String, mainLanguage:String,nameLL:String,nameML:String){
         val studyCardModel = StudyCardModel(learningLanguage,mainLanguage,pronunciation,nameLL,nameML)
         studyCardsList.add(studyCardModel)
 
