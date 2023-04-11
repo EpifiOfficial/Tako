@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         sectionList.add("Learn")
         sectionList.add("Tests")
 
-        initRecyclerView()
+        initSections()
         initLearn()
 
 
@@ -35,14 +35,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun initLearn() {
 
+        
+
     }
 
-    private fun initRecyclerView() {
+    private fun initSections() {
 
         sectionAdapter = SectionAdapter(sectionList)
-        binding.Rv1.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        binding.Rv1.setHasFixedSize(true)
-        binding.Rv1.adapter = sectionAdapter
+        binding.RvSections.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.RvSections.setHasFixedSize(true)
+        binding.RvSections.adapter = sectionAdapter
 
     }
 
