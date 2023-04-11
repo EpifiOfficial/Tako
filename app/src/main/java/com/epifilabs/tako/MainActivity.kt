@@ -35,72 +35,50 @@ class MainActivity : AppCompatActivity() {
         sectionList.add("Tests")
 
         //adding elements to study/learn list
-        val input = """
-        такой (takoy) - tal
-        тоже (tozhe) - también
-        больше (bol'she) - más
-        один (odin) - uno
-        надо (nado) - es necesario
-        сам (sam) - mismo
-        мне (mne) - me
-        чем (chem) - que / que
-        после (posle) - después de
-        наш (nash) - nuestro
-        тут (tut) - aquí
-        год (god) - año
-        него (nego) - su / de él
-        тебя (tebya) - tú
-        очень (ochen') - realmente
-        две (dve) - dos
-        уже (uzhe) - ya
-        другой (drugoy) - otro
-        вот (vot) - aquí está / aquí tienes
-        здесь (zdes') - aquí
-        раз (raz) - vez
-        двух (dvukh) - dos
-        свою (sovuyu) - su / de ella
-        всё (vsyo) - todo
-        были (byli) - fueron
-        этой (etoy) - esta
-        тоже самое (tozhe samoye) - lo mismo
-        немного (nemnogo) - un poco
-        ведь (ved') - pues
-        тогда (togda) - entonces
-        какой (kakoy) - qué tipo de
-        дело (delo) - asunto / negocio
-        пока (poka) - mientras
-        сейчас (seychas) - en este momento
-        тебе (tebe) - a ti
-        понимаю (ponimayu) - entiendo
-        сказал (skazal) - dijo
-        самый (samy) - el más
-        идти (idti) - ir
-        знаю (znayu) - sé
-        своей (svoey) - su / de ella
-        всем (vsem) - todos
-        надеюсь (nadeyus') - espero
-        три (tri) - tres
-        когда (kogda) - cuando
-        конечно (konechno) - por supuesto
-        чего (chego) - qué
-        понятно (ponyatno) - claro
-        вместе (vmeste) - juntos
-        место (mesto) - lugar
-    """.trimIndent()
-
-        val items = input.split("\n")
-        val result = items.map {
-            val parts = it.split(" - ")
-            Triple(parts[0].trim(), parts[1].trim(), parts[2].trim())
-        }
-        result.forEach {
-            createElementsStudyList( it.first, it.second,it.third,"Russian","Spanish")
-        }
+        addingElementsStudy()
 
 
         //initialization of classes
         initSections()
         initLearn()
+
+
+    }
+
+    private fun addingElementsStudy() {
+        createElementsStudyList("такой", "takoy", "tal", "Russian", "Spanish")
+        createElementsStudyList("тоже", "tozhe", "también", "Russian", "Spanish")
+        createElementsStudyList("больше", "bol'she", "más", "Russian", "Spanish")
+        createElementsStudyList("один", "odin", "uno", "Russian", "Spanish")
+        createElementsStudyList("надо", "nado", "es necesario", "Russian", "Spanish")
+        createElementsStudyList("сам", "sam", "mismo", "Russian", "Spanish")
+        createElementsStudyList("мне", "mne", "me", "Russian", "Spanish")
+        createElementsStudyList("чем", "chem", "que / que", "Russian", "Spanish")
+        createElementsStudyList("после", "posle", "después de", "Russian", "Spanish")
+        createElementsStudyList("наш", "nash", "nuestro", "Russian", "Spanish")
+        createElementsStudyList("тут", "tut", "aquí", "Russian", "Spanish")
+        createElementsStudyList("год", "god", "año", "Russian", "Spanish")
+        createElementsStudyList("него", "nego", "su / de él", "Russian", "Spanish")
+        createElementsStudyList("тебя", "tebya", "tú", "Russian", "Spanish")
+        createElementsStudyList("очень", "ochen'", "realmente", "Russian", "Spanish")
+        createElementsStudyList("две", "dve", "dos", "Russian", "Spanish")
+        createElementsStudyList("уже", "uzhe", "ya", "Russian", "Spanish")
+        createElementsStudyList("другой", "drugoy", "otro", "Russian", "Spanish")
+        createElementsStudyList("вот", "vot", "aquí está / aquí tienes", "Russian", "Spanish")
+        createElementsStudyList("здесь", "zdes'", "aquí", "Russian", "Spanish")
+        createElementsStudyList("раз", "raz", "vez", "Russian", "Spanish")
+        createElementsStudyList("двух", "dvukh", "dos", "Russian", "Spanish")
+        createElementsStudyList("свою", "sovuyu", "su / de ella", "Russian", "Spanish")
+        createElementsStudyList("всё", "vsyo", "todo", "Russian", "Spanish")
+        createElementsStudyList("были", "byli", "fueron", "Russian", "Spanish")
+        createElementsStudyList("этой", "etoy", "esta", "Russian", "Spanish")
+        createElementsStudyList("тоже самое", "tozhe samoye", "lo mismo", "Russian", "Spanish")
+        createElementsStudyList("немного", "nemnogo", "un poco", "Russian", "Spanish")
+        createElementsStudyList("ведь", "ved'", "pues", "Russian", "Spanish")
+
+
+
+
 
 
     }
@@ -129,6 +107,7 @@ class MainActivity : AppCompatActivity() {
     private fun createElementsStudyList(learningLanguage:String,mainLanguage:String,pronunciation:String,nameLL:String,nameML:String){
         val studyCardModel = StudyCardModel(learningLanguage,mainLanguage,pronunciation,nameLL,nameML)
         studyCardsList.add(studyCardModel)
+
 
     }
 
