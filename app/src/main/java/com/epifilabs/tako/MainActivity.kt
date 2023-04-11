@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initLearn() {
 
-        studyCardsAdapter = StudyCardsAdapter()
+        studyCardsAdapter = StudyCardsAdapter(studyCardsList)
 
 
 
