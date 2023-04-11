@@ -35,10 +35,15 @@ class MainActivity : AppCompatActivity() {
         sectionList.add("Tests")
 
         //adding elements to study/learn list
-        studyCardsList = arrayListOf<StudyCardModel>()
-
+        addElementsStudyList()
         initSections()
         initLearn()
+
+
+    }
+
+    private fun addElementsStudyList() {
+        studyCardsList = arrayListOf<StudyCardModel>()
 
 
     }
@@ -46,7 +51,9 @@ class MainActivity : AppCompatActivity() {
     private fun initLearn() {
 
         studyCardsAdapter = StudyCardsAdapter(studyCardsList)
-
+        binding.RvLearn.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.RvLearn.setHasFixedSize(true)
+        binding.RvLearn.adapter = studyCardsAdapter
 
 
 
@@ -60,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         binding.RvSections.adapter = sectionAdapter
 
     }
+
 
 
 }
