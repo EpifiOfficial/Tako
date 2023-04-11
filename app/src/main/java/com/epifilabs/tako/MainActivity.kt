@@ -29,9 +29,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Adding elements to section list
         sectionList = arrayListOf<String>()
         sectionList.add("Learn")
         sectionList.add("Tests")
+
+        //adding elements to study/learn list
+        studyCardsList = arrayListOf<StudyCardModel>()
 
         initSections()
         initLearn()
@@ -42,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     private fun initLearn() {
 
         studyCardsAdapter = StudyCardsAdapter(studyCardsList)
+
 
 
 
